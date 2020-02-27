@@ -1,0 +1,3 @@
+Simply put the "FT897D" folder in your Arduino "libraries" folder.
+
+Просто поместите папку «FT897D» в папку «библиотеки» IDE Arduino.
