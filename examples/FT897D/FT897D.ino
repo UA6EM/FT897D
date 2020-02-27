@@ -14,8 +14,8 @@
   Attach your radio's CAT interface to the following arduino pins to begin:
 
     Radio CAT port GND -> Arduino GND
-    Radio CAT port TX  -> Arduino pin 3
-    Radio CAT port RX  -> Arduino pin 2
+    Radio CAT port TX  -> Arduino pin 2 // FIX (in original libs 3)
+    Radio CAT port RX  -> Arduino pin 3 // FIX (in original libs 2)
 
   If once you compile and upload the code, you are unable to see the lock icon on the radio's LCD display, try reversing
   pins 2 and 3. It may be necessary to power down the radio and to reset the Arduino prior to powering the radio back on.
