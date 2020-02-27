@@ -8,9 +8,9 @@
   
   ------------------
 
-  FT857D_controls_test
+  FT897D
 
-  This example sketch demonstrates how to use the FT-857D library to control a Yaesu FT-857D radio by calling various commands.
+  This example sketch demonstrates how to use the FT-897D library to control a Yaesu FT-897D radio by calling various commands.
   Attach your radio's CAT interface to the following arduino pins to begin:
 
     Radio CAT port GND -> Arduino GND
