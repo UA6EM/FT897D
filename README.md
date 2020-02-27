@@ -1,5 +1,5 @@
 # FT897D CAT command in arduino
-This Arduino library created will allow you to control various functions of your radio via an Arduino micro-controller through the use of “Computer Aided Transceiver” (CAT) functions. Although the CAT command byte definitions are aimed at a Yaesu FT-857D, many of the functions should work along the FT-8*7 platform with little or no need for modification.
+This Arduino library created will allow you to control various functions of your radio via an Arduino micro-controller through the use of “Computer Aided Transceiver” (CAT) functions. Although the CAT command byte definitions are aimed at a Yaesu FT-897D, many of the functions should work along the FT-8*7 platform with little or no need for modification.
 
 Requirements:
 Arduino 1.8.x
