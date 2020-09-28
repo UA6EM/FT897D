@@ -178,18 +178,19 @@ void FT897D::squelchFreq(unsigned int freq, char * sqlType) {
 if (strcasecmp(sqlType,"C")==0) rigSqlFreq[4] = CAT_SQL_CTCSS_SET;
 if (strcasecmp(sqlType,"D")==0) rigSqlFreq[4] = CAT_SQL_DCS_SET;
 	
-	byte freq_bcd[2];
+	byte freq_bcd[5];
 	to_bcd_be(freq_bcd, (long)  freq, 4);
 
 	for (byte i=0; i<4; i++){
-		rigSqlFreq[i] = freq_bcd[i];
+		byte j = freq_bcd[i];
+		rigSqlFreq[i] = j; /*freq_bcd[i];*/
 	}
 	sendCmd(rigSqlFreq,5);
 	getByte();
 }
 
 byte FT897D::getMode() {
-	unsigned long l = getFreqMode();
+	unsigned long mode /*l*/ = getFreqMode();
 	return mode;
 }
 
@@ -288,9 +289,10 @@ void FT897D::flushRX() {
 unsigned long FT897D::from_bcd_be(const  byte bcd_data[], unsigned bcd_len)
 {
 	int i;
+	int j = bcd_len/2;;
 	long f = 0;
 
-	for (i=0; i < bcd_len/2; i++) {
+	for (i=0; i < j /* = bcd_len/2 */; i++) {
 		f *= 10;
 		f += bcd_data[i]>>4;
 		f *= 10;
