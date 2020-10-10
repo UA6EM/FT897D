@@ -1,15 +1,11 @@
 /*
-  
-  ------------------
-
-  FT897D_getFreq
+    FT897D_getFreq
 
     Radio CAT port GND -> Arduino GND
     Radio CAT port TX  -> Arduino pin 2
     Radio CAT port RX  -> Arduino pin 3
-
- 
 */
+
 
 #include <SoftwareSerial.h>
 #include "FT897D.h"     // the file FT897D.h has a lot of documentation which I've added to make using the library easier
@@ -33,8 +29,26 @@ void setup() {
 }
 
 void loop() {         
-  int dly = 1;            // delay for x milliseconds between commands
-/* *
+    int dly = 1;            // delay for x milliseconds between commands
+
+    Serial.print("FREQ = "); 
+    unsigned long f = radio.getFreqMode();
+ // Serial.println(radio.getFreqMode());
+ // float fnew = (float) f/100000;
+    float fnew = f/100000.0;
+    Serial.println(fnew);
+    delay(3000);
+    
+/*    
+    byte mmm = 0;
+    mmm = radio.getMode();
+    Serial.print("MODE = "); 
+    Serial.println(mmm);
+    radio.setMode("LSB");     // set mode to LSB
+ */   
+}
+
+/*  *
   radio.lock(true);         // lock the radio's controls
   delay(dly);
   radio.lock(false);        // unlock the radio's controls
@@ -96,15 +110,4 @@ void loop() {
   delay(dly);
   radio.squelch("OFF");    // clear CTCSS & DCS squelch
   delay(dly);
-  /* */
-    Serial.print("FREQ = "); 
-    unsigned long fff = radio.getFreqMode();
- // Serial.println(radio.getFreqMode());
-    Serial.println(fff);
-     byte mmm = 0;
-     mmm = radio.getMode();
-    Serial.print("MODE = "); 
-    Serial.println(mmm);
-    delay(100);
-    radio.setMode("LSB");     // set mode to LSB
-}
+  /*  END Commands */
